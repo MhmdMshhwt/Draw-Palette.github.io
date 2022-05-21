@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #aaa;
+  transition: 0.1s;
+}
+.palette {
+  width: 30%;
+  min-height: 100vh;
+  background-color: #efefef;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 999;
+  transition: 0.1s;
+}
+.palette .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.palette h2 {
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.palette .colors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.palette .color {
+  width: 60px;
+  height: 60px;
+  transition: ease-in-out 0.001s;
+  border: 1px solid white;
+}
+.palette .color:hover {
+  transform: scale(1.2);
+}
+
+button {
+  background-color: aqua;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  width: 100%;
+  user-select: none;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  transform: scale(0.9);
+  background-color: black;
+  color: aqua;
+  cursor: pointer;
+}
+
+/*end colors*/
+
+.drawingBoard {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: zooming 0.6s ease-in-out;
+}
+.drawingBoard h2 {
+  font-size: 40px;
+  color: aqua;
+  text-transform: capitalize;
+  text-align: center;
+}
+.drawingBoard canvas {
+  background-color: #fff;
+  border: 1px solid aqua;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+}
+.close:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+/*start select font*/
+#select {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  background-color: black;
+}
+
+#select option {
+  color: aqua;
+  background-color: black;
+  padding: 7px;
+}
+/*animation*/
+@keyframes zooming {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.active {
+  transform: scale(1.2);
+}
+
+.bars {
+  padding: 5px;
+  width: 50px;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2;
+}
+.bars span {
+  margin: 4px auto;
+  width: 100%;
+  height: 4px;
+  background-color: #878787;
+}
+.bars:hover {
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .palette {
+    width: 50%;
+  }
+  .palette .color {
+    width: 40px;
+    height: 40px;
+  }
+  .palette h2 {
+    text-align: center;
+    font-size: 18px;
+  }
+  #select {
+    font-size: 18px;
+  }
+}

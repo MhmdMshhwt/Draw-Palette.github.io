@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drow with palette</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="bars">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="palette">
+        <div class="container">
+            <span class="close" id="close1">&times;</span>
+            <h2>pick your favourite color</h2>
+            <div class="colors">
+                
+            </div>
+            <select id="select">
+                <option value="">Select Font</option>
+                <option value="2">2px</option>    
+                <option value="4">4px</option>
+                <option value="6">6px</option>
+                <option value="8">8px</option>
+
+            </select>
+            <button id="button">Drow</button>
+        </div>
+    </div>
+    <div class="drawingBoard" id="drawingBoard">
+        <span class="close" id="close">&times;</span>
+        <canvas></canvas>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+</html>
